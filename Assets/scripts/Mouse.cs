@@ -8,10 +8,12 @@ public class Mouse : MonoBehaviour
     public float jumpForce = 10.0f;
     private bool canJump = true;
     private Rigidbody rb;
+    public LogicScript logic;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 
     void Update()
@@ -41,11 +43,12 @@ public class Mouse : MonoBehaviour
             canJump = true;
         }
 
-       
-        if (collision.gameObject.CompareTag("Obstacle"))
+
+        else if (collision.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("Du hast verloren!");
-            
+            logic.GameOver();
+
         }
     }
 }

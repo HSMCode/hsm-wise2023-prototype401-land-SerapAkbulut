@@ -8,6 +8,8 @@ TagManager:
   - capsule
   - Ground
   - Obstacle
+  - Cheese
+  - Logic
   layers:
   - Default
   - TransparentFX

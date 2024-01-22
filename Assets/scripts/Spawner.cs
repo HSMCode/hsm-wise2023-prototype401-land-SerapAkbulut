@@ -10,10 +10,12 @@ public class Spawner : MonoBehaviour
     public float spawnZPosition = 0.0f;
     public float minXPosition = -10.0f;
     public float maxXPosition = 10.0f;
+    public LogicScript logic;
 
     private void Start()
     {
         InvokeRepeating("SpawnObject", 0.0f, spawnInterval);
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 
     private void SpawnObject()
@@ -45,15 +47,3 @@ public class MoveLeft : MonoBehaviour
     }
 }
 
-public class PlayerController : MonoBehaviour
-{
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-        if (collision.gameObject.CompareTag("Obstacle"))
-        {
-            Debug.Log("Du hast verloren!");
-            
-        }
-    }
-}

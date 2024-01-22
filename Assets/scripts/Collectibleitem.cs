@@ -2,42 +2,25 @@ using UnityEngine;
 
 public class CollectibleItem : MonoBehaviour
 {
-    public float growSpeed = 1.0f;
     public ParticleSystem pickup;
+    public LogicScript logic;
     [SerializeField] private AudioSource collectionSoundEffect;
 
     void Start()
     {
         pickup = GetComponent<ParticleSystem>();
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 
     void Update()
     {
-        
-        transform.localScale += Vector3.one * growSpeed * Time.deltaTime;
-
-        
-        MoveTowardsPlayer();
-    }
-
-    void MoveTowardsPlayer()
-    {
-        
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-        if (player != null)
-        {
-            Vector3 directionToPlayer = player.transform.position - transform.position;
-
-            
-            transform.Translate(directionToPlayer.normalized * growSpeed * Time.deltaTime, Space.World);
-        }
+          
     }
 
     private void OnTriggerEnter(Collider other)
     {
         
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Cheese"))
         {
             collectionSoundEffect.Play();
             pickup.Play();
