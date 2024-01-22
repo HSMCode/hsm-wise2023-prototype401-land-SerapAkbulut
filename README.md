@@ -1,7 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/uTVZkEVg)
-# Project Title
+Cheese Chase
 
-One Paragraph of project description goes here.
+A litte Mouse Who Loves nothing more than cheese in the world
 
 ## Summary
 
@@ -25,7 +25,7 @@ for notes on how to deploy the project on a live system.
 
 What things you need to install the software and how to install them
 
-    Give examples
+    Unity and Visual Studio Code
 
 ### Installing
 
@@ -95,9 +95,14 @@ who participated in this project.
 This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
 Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
 details
+Asset Linda Kruse (Mouse)
+Asset BlankfaceStanislav (Trash)
+Background Music B.G.M
+Sound Design SwishSwoosh
 
 ## Acknowledgments
 
-  - Hat tip to anyone whose code was used
-  - Inspiration
-  - etc
+  Lead by Proffesor Linda Kruse
+  Devolper Serap Akbulut
+  Background Serap Akbulut
+  
