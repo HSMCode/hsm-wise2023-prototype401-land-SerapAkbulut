@@ -49,11 +49,11 @@ public class PlayerController : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        // Wenn der Spieler ein Objekt berührt, verliert er
+        
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("Du hast verloren!");
-            // Hier könntest du weitere Aktionen für den Verlust hinzufügen
+            
         }
     }
 }
