@@ -4,6 +4,7 @@ public class CollectibleItem : MonoBehaviour
 {
     public ParticleSystem pickup;
     public LogicScript logic;
+ 
     [SerializeField] private AudioSource collectionSoundEffect;
 
     void Start()
@@ -17,15 +18,16 @@ public class CollectibleItem : MonoBehaviour
           
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        
-        if (other.CompareTag("Cheese"))
+
+        if (collision.gameObject.CompareTag("Cheese"))
         {
             collectionSoundEffect.Play();
             pickup.Play();
             Debug.Log("Objekt aufgesammelt!");
-            Destroy(gameObject);
+            Destroy(collision.gameObject);
+            logic.addscore();
         }
     }
 }

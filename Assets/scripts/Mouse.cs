@@ -16,6 +16,12 @@ public class Mouse : MonoBehaviour
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 
+    void EnableRagdoll()
+    {
+        rb.isKinematic = true;
+        rb.detectCollisions = false;
+    }
+
     void Update()
     {
        
@@ -44,10 +50,11 @@ public class Mouse : MonoBehaviour
         }
 
 
-        else if (collision.gameObject.CompareTag("Obstacle"))
+         if (collision.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("Du hast verloren!");
             logic.GameOver();
+            Destroy(gameObject);
 
         }
     }
